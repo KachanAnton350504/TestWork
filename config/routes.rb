@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   post "markdown/preview"
 
-  mount GrapeSwaggerRails::Engine => '/swagger', as: 'swagger'
+  mount GrapeSwaggerRails::Engine => '/api', as: 'swagger'
   mount API => '/'
   
  end

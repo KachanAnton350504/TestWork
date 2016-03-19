@@ -1,7 +1,7 @@
 module Authors
   class Data < Grape::API
 
-    resource :authors_data do
+    resource :authors do
       desc "List all Authors"
       get do
         Author.all
@@ -37,6 +37,32 @@ module Authors
       put ':id' do
         Author.find(params[:id]).update({biography:params[:biography]})
       end
+
+       desc "List all Users"
+      get do
+        User.all
+      end
+
+      desc "create a new User"
+      params do
+        requires :email, type: String
+        requires :password, type:String
+      end
+      post do
+        User.create!({
+          email:params[:email],
+          password:params[:password],
+        })
+      end
+
+      desc "delete an User"
+      params do
+        requires :id, type:Integer 
+      end
+      delete ':id' do
+        User.find(params[:id]).destroy!
+      end
+      
     end
   end
 end
