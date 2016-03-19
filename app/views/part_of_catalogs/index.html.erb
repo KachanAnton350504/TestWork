@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Part Of Catalogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @part_of_catalogs.each do |part_of_catalog| %>
+      <tr>
+        <td><%= part_of_catalog.title %></td>
+        <td><%= part_of_catalog.description %></td>
+        <td><%= link_to 'Show', part_of_catalog %></td>
+        <td><%= link_to 'Edit', edit_part_of_catalog_path(part_of_catalog) %></td>
+        <td><%= link_to 'Destroy', part_of_catalog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Part of catalog', new_part_of_catalog_path %>

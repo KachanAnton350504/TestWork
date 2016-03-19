@@ -1,0 +1,65 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :vendor_code %><br>
+    <%= f.text_field :vendor_code %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :series %><br>
+    <%= f.text_field :series %>
+  </div>
+  <div class="field">
+    <%= f.label :subjects %><br>
+    <%= f.text_field :subjects %>
+  </div>
+  <div class="field">
+    <%= f.label :limit_age %><br>
+    <%= f.number_field :limit_age %>
+  </div>
+  <div class="field">
+    <%= f.label :time_status %><br>
+    <%= f.number_field :time_status %>
+  </div>
+  <div class="field">
+    <%= f.label :description_product %><br>
+    <%= f.text_area :description_product %>
+  </div>
+  <div class="field">
+    <%= f.label :description_book %><br>
+    <%= f.text_area :description_book %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

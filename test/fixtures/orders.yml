@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment: MyString
+  receipt: MyString
+  cost: 1.5
+  book_id: 1
+  user_id: 1
+
+two:
+  payment: MyString
+  receipt: MyString
+  cost: 1.5
+  book_id: 1
+  user_id: 1

@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@book.image) %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @book.status %>
+</p>
+
+<p>
+  <strong>Vendor code:</strong>
+  <%= @book.vendor_code %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @book.weight %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
+
+<p>
+  <strong>Series:</strong>
+  <%= @book.series %>
+</p>
+
+<p>
+  <strong>Subjects:</strong>
+  <%= @book.subjects %>
+</p>
+
+<p>
+  <strong>Limit age:</strong>
+  <%= @book.limit_age %>
+</p>
+
+<p>
+  <strong>Time status:</strong>
+  <%= @book.time_status %>
+</p>
+
+<p>
+  <strong>Description product:</strong>
+  <%= markdown(@book.description_product) %>
+</p>
+
+<p>
+  <strong>Description book:</strong>
+  <%= markdown(@book.description_book) %>
+</p>
+
+
+<%= form_for @order_book, url: order_book_path do |f| %>
+
+<%=  hidden_field_tag :book_id, @book.id %>
+<%=  hidden_field_tag :user_id, current_user.id %>
+   
+   <%= f.label :payment %><br>
+    <%= f.text_field :payment %>
+   <br>
+   <%= f.label :receipt %><br>
+    <%= f.text_field :receipt %>
+
+    
+<div class="create_button">
+  <%= f.submit 'Buy' %>
+</div>
+
+<% end %>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

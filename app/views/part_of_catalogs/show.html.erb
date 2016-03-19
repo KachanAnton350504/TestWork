@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @part_of_catalog.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @part_of_catalog.description %>
+</p>
+
+<%= link_to 'Edit', edit_part_of_catalog_path(@part_of_catalog) %> |
+<%= link_to 'Back', part_of_catalogs_path %>

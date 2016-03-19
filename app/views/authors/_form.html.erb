@@ -1,0 +1,30 @@
+<%= form_for(@author, :html => {:multipart => true}) do |f| %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+      <% @author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= image_tag(@author.foto_url) if @author.foto? %>
+    <%= f.file_field :foto %>
+    <%= f.hidden_field :foto_cache %>
+  </div>
+  <div class="field">
+    <%= f.label :biography %><br>
+    <%= f.text_area :biography %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

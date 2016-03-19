@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyString
+  status: 1
+  vendor_code: MyString
+  weight: 1.5
+  price: 1.5
+  series: MyString
+  subjects: MyString
+  limit_age: 1
+  time_status: 1
+  description_product: MyText
+  description_book: MyText
+
+two:
+  name: MyString
+  image: MyString
+  status: 1
+  vendor_code: MyString
+  weight: 1.5
+  price: 1.5
+  series: MyString
+  subjects: MyString
+  limit_age: 1
+  time_status: 1
+  description_product: MyText
+  description_book: MyText
