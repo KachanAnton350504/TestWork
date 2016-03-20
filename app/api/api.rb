@@ -6,10 +6,5 @@ class API < Grape::API
   mount Users::Data
   mount All::Data
 
-   add_swagger_documentation(
-      base_path: "/api",
-      mount_path: "api",
-      hide_documentation_path: false,
-      api_documentation: { desc: 'Reticulated splines API swagger-compatible documentation.' }
-    )
+   add_swagger_documentation mount_path: "api"
 end

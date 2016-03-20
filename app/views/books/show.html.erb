@@ -30,10 +30,10 @@
   <%= @book.time_status %>
   <hr>
   <strong>Description product:</strong>
-  <%= @book.description_product %>
+  <%= @book.description_product.html_safe %>
   <hr>
   <strong>Description book:</strong>
-  <%= @book.description_book %>
+  <%= @book.description_book.html_safe %>
   <hr>
 
 <%= link_to 'Buy Book', buy_book_path %>
