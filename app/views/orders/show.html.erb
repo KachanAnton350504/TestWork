@@ -1,0 +1,14 @@
+
+<% count = 0 %>
+<%if !@orders.any? %>
+<h5 class="well"> No orders. </h5>
+<% end %>
+<% @orders.each do |order|%>
+    <br>
+    <h4><%= count += 1 %>.<%= order.user.email %></h4>
+    <h4><%= order.book.name %></h4>
+    <hr>
+    <%= link_to "Descry", descry_order_path(order) %> |
+    <%= link_to "Accept", accept_order_path(order,'yes') %> |
+    <%= link_to "Reject", accept_order_path(order,'no') %>
+<% end %>

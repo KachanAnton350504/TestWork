@@ -7,8 +7,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @part_of_catalog.description %>
+  <%= @part_of_catalog.description.html_safe %>
 </p>
 
-<%= link_to 'Edit', edit_part_of_catalog_path(@part_of_catalog) %> |
 <%= link_to 'Back', part_of_catalogs_path %>

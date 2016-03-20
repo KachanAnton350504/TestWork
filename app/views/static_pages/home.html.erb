@@ -1,24 +1,24 @@
 
-<hr>
-<%= link_to 'Authors', authors_path %>
+<title>Home</title>
+<h1><%= link_to 'Authors', authors_path %></h1>
 <br>
-<%= link_to 'New Author', new_author_path %>  -- Пример текстового редактора(возможно надо обновить страницу).
+<% @authors.each do |author| %>
+  <li>
+    <h2><%= author.name %> <%= link_to 'Show', author %></h2>
+      <% author.books.each do |book| %>
+        <%= book.name %> <%= link_to 'Show', book %>(Купить книгу можно тут.)
+        <br>
+      <% end %>
+  </li>
+<% end %>
+<hr>
+<h1><%= link_to 'Books', books_path %></h1> 
+<hr>
+<h1><%= link_to 'List Orders', orders_list_path %></h1>(В будущем будет доступна только администраторам(Role:admin).При регистрации пользователи по defaultu Role: forum_user.)
+<hr>
+<h1><%= link_to 'Rails Admin', rails_admin_path %></h1>
+<hr>
+<h1><%= link_to 'Api Doc', swagger_path %></h1>  
+<hr>
 
-<hr>
-<%= link_to 'Rails Admin', rails_admin_path %>
 
-<hr>
-<%= link_to 'Grape-Api', swagger_path %>  
-<br>
-Api for Users: http://localhost:3000/swagger_doc/users.json
-<br>
-Api for Authors: http://localhost:3000/swagger_doc/authors_data.json
-<hr>
-<%= link_to 'books_path', books_path %> ## Покупка книги в show, там оставляешь заказ, потом user с ролью продовца может подтвердить заказ.
-<br>
-<%= link_to 'Confirmation product buy', user_root_path %>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>

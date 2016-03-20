@@ -1,84 +1,41 @@
 <p id="notice"><%= notice %></p>
-
-<p>
   <strong>Name:</strong>
   <%= @book.name %>
-</p>
-
-<p>
+  <hr>
   <strong>Image:</strong>
-  <%= @book.image %>
-</p>
-
-<p>
+  <%= image_tag(@book.image) %>
+  <hr>
   <strong>Status:</strong>
   <%= @book.status %>
-</p>
-
-<p>
+  <hr>
   <strong>Vendor code:</strong>
   <%= @book.vendor_code %>
-</p>
-
-<p>
+  <hr>
   <strong>Weight:</strong>
   <%= @book.weight %>
-</p>
-
-<p>
+  <hr>
   <strong>Price:</strong>
   <%= @book.price %>
-</p>
-
-<p>
+  <hr>
   <strong>Series:</strong>
   <%= @book.series %>
-</p>
-
-<p>
+  <hr>
   <strong>Subjects:</strong>
   <%= @book.subjects %>
-</p>
-
-<p>
+  <hr>
   <strong>Limit age:</strong>
   <%= @book.limit_age %>
-</p>
-
-<p>
+  <hr>
   <strong>Time status:</strong>
   <%= @book.time_status %>
-</p>
-
-<p>
+  <hr>
   <strong>Description product:</strong>
   <%= @book.description_product %>
-</p>
-
-<p>
+  <hr>
   <strong>Description book:</strong>
   <%= @book.description_book %>
-</p>
+  <hr>
 
+<%= link_to 'Buy Book', buy_book_path %>
 
-<%= form_for @order_book, url: order_book_path do |f| %>
-
-<%=  hidden_field_tag :book_id, @book.id %>
-<%=  hidden_field_tag :user_id, current_user.id %>
-   
-   <%= f.label :payment %><br>
-    <%= f.text_field :payment %>
-   <br>
-   <%= f.label :receipt %><br>
-    <%= f.text_field :receipt %>
-
-    
-<div class="create_button">
-  <%= f.submit 'Buy' %>
-</div>
-
-<% end %>
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

@@ -1,0 +1,28 @@
+<%= form_for @order_book, url: order_book_path do |f| %>
+
+<%=  hidden_field_tag :book_id, @book.id %>
+<%=  hidden_field_tag :user_id, current_user.id %>
+   
+   <%= f.label :payment %><br>
+    <%= f.text_field :payment %>
+   <br>
+   <%= f.label :receipt %><br>
+    <%= f.text_field :receipt %>
+  <br>
+  <strong>Name:</strong>
+  <%= @book.name %>
+  <hr>
+  <strong>Image:</strong>
+  <%= image_tag(@book.image) %>
+  <hr>
+   <strong>Price:</strong>
+  <%= @book.price %>
+  <hr>
+
+
+    
+<div class="create_button">
+  <%= f.submit 'Buy Book' %>
+</div>
+
+<% end %>

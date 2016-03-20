@@ -7,12 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to 'Home', home_page_path %>
+<hr>
 <% if user_signed_in? %>
     <span>Здравствуйте, <%= current_user.email %></span>
     <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
 <% else %>
     <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
 <% end %>
+    <hr>
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
+    <hr>
+
 <%= yield %>
 
 </body>

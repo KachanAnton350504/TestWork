@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Foto</th>
       <th>Biography</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -16,16 +16,10 @@
     <% @authors.each do |author| %>
       <tr>
         <td><%= author.name %></td>
-        <td><%= author.foto %></td>
-        <td><%= author.biography %></td>
+        <td><%= image_tag(author.foto) %></td>
+        <td><%= author.biography.html_safe %></td>
         <td><%= link_to 'Show', author %></td>
-        <td><%= link_to 'Edit', edit_author_path(author) %></td>
-        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Author', new_author_path %>
