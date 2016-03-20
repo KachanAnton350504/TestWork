@@ -18,6 +18,10 @@ gem 'markitup-rails'
 #grape-api
 gem 'grape-swagger-rails'
 
+gem 'rich', github: 'bastiaanterhorst/rich'
+gem 'paperclip'
+
+
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'

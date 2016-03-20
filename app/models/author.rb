@@ -1,4 +1,4 @@
 class Author < ActiveRecord::Base
-  mount_uploader :foto, FotoUploader
+  has_attached_file :foto
   has_many :books
 end

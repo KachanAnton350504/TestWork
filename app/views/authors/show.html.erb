@@ -7,12 +7,12 @@
 
 <p>
   <strong>Foto:</strong>
-  <%= image_tag(@author.foto.thumb.url) %>
+  <%= image_tag(@author.foto) %>
 </p>
-<%= @foto %>
+
 <p>
   <strong>Biography:</strong>
-  <%= markdown(@author.biography) %>
+  <%= @author.biography.html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |

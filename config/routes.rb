@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  mount Rich::Engine => '/rich', :as => 'rich'
   root 'static_pages#home'
 
   post '/books/order_book', to: 'books#order_book', as: 'order_book'
