@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318231802) do
+ActiveRecord::Schema.define(version: 20160320002448) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 20160318231802) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "catalogs_part_of_catalogs", id: false, force: :cascade do |t|
+    t.integer "catalog_id",         null: false
+    t.integer "part_of_catalog_id", null: false
+  end
+
+  add_index "catalogs_part_of_catalogs", ["catalog_id"], name: "index_catalogs_part_of_catalogs_on_catalog_id"
+  add_index "catalogs_part_of_catalogs", ["part_of_catalog_id"], name: "index_catalogs_part_of_catalogs_on_part_of_catalog_id"
+
   create_table "orders", force: :cascade do |t|
     t.string   "payment"
     t.string   "receipt"
@@ -72,12 +80,9 @@ ActiveRecord::Schema.define(version: 20160318231802) do
   create_table "part_of_catalogs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "catalog_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "part_of_catalogs", ["catalog_id"], name: "index_part_of_catalogs_on_catalog_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

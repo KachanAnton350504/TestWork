@@ -1,4 +1,4 @@
 class PartOfCatalog < ActiveRecord::Base
-  belongs_to :catalog
+  has_and_belongs_to_many :catalog
   has_many :books
 end
